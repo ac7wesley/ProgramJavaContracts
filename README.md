@@ -1,11 +1,10 @@
-## VSCode Shortcuts
+## Aplicação de conceitos de orientação a objetos
 
-> -   `alt + shift + a`: Comment all lines
-> -   `ctrl + ;`: Comment one line
-> -   `alt + shift + f`: Format page
-> -   `ctrl + s`: Save page
-> -   `ctrl + .`: Open advanced options
-> -   `Video with shortcuts`: https://www.youtube.com/watch?v=rzDHx0gxkNQ
+### Folders
+
+-   `applications` - aplicação que consome os demais objetos do sistema.
+-   `entities` - abriga os "serviços" dos sistema.
+-   `entities\enums` - variáveis enums.
 
 ## Canel Case
 
@@ -40,7 +39,17 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 > If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
+## Helper of VSCode Shortcuts
+
+> -   `alt + shift + a`: Comment all lines
+> -   `ctrl + ;`: Comment one line
+> -   `alt + shift + f`: Format page
+> -   `ctrl + s`: Save page
+> -   `ctrl + .`: Open advanced options
+> -   `Video with shortcuts`: https://www.youtube.com/watch?v=rzDHx0gxkNQ
+
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
 # ProgramJavaContracts
