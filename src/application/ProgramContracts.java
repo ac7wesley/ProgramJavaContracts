@@ -1,8 +1,8 @@
 package application;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import entities.Department;
@@ -15,15 +15,32 @@ public class ProgramContracts {
     public static void main(String[] args) throws ParseException {
 
         Scanner scan = new Scanner(System.in);
-        SimpleDateFormat formatterData = new SimpleDateFormat("dd/MM/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         System.out.print("Enter department's name: ");
         String deptName = scan.nextLine();
         System.out.println("Enter worker data: ");
         System.out.print("Name: ");
         String workerName = scan.nextLine();
-        System.out.print("Level: ");
-        String workerLevel = scan.nextLine();
+        String workerLevel = "";
+        do {
+            System.out.println("Levels available:");
+            System.err.println("1 - Junior");
+            System.out.println("2 - Mid_Level");
+            System.out.println("3 - Senior");
+            System.out.print("Chose level: ");
+            workerLevel = scan.next();
+            if (workerLevel.equals("1")) {
+                workerLevel = "JUNIOR";
+            } else if (workerLevel.equals("2")) {
+                workerLevel = "MID_LEVEL";
+            } else if (workerLevel.equals("3")) {
+                workerLevel = "SENIOR";
+            } else {
+                System.out.println("\nInvalid level! Please enter again.\n");
+            }
+        } while (!workerLevel.equals("JUNIOR") && !workerLevel.equals("MID_LEVEL") && !workerLevel.equals("SENIOR"));
+
         System.out.print("Base salary: ");
         double baseSalary = scan.nextDouble();
 
@@ -35,7 +52,7 @@ public class ProgramContracts {
         for (int i = 1; i <= numbersContracts; i++) {
             System.out.println("Enter contract #" + i + " data: ");
             System.out.print("Date (DD/MM/YYYY): ");
-            Date dateContract = formatterData.parse(scan.next());
+            LocalDate dateContract = LocalDate.parse(scan.next(), formatter);
             System.out.print("Value per hour: ");
             double valuePerHour = scan.nextDouble();
             System.out.print("Duration (hours): ");
